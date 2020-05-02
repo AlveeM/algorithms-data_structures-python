@@ -8,12 +8,12 @@ def string_reverser(our_string):
     Returns:
        string: The reversed string
     """
-    resultStr = ''
+    result_str = ''
 
     for i in range(len(our_string)):
-        resultStr += our_string[(len(our_string) - 1) - i]
+        result_str += our_string[(len(our_string) - 1) - i]
 
-    return resultStr
+    return result_str
 
 # Test Cases
 
