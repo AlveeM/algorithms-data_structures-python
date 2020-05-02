@@ -11,11 +11,11 @@ def anagram_checker(str1, str2):
        bool: Indicates whether strings are anagrams
     """
 
-    str1Cleaned = sorted(str1.replace(' ', '').lower())
-    str2Cleaned = sorted(str2.replace(' ', '').lower())
+    str1_cleaned = sorted(str1.replace(' ', '').lower())
+    str2_cleaned = sorted(str2.replace(' ', '').lower())
 
 
-    return str1Cleaned == str2Cleaned
+    return str1_cleaned == str2_cleaned
 
 # Test Cases
 
