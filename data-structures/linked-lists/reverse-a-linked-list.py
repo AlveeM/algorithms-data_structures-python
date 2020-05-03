@@ -1,3 +1,5 @@
+# Helper Code
+
 class Node:
     def __init__(self, value):
         self.value = value
@@ -36,28 +38,21 @@ def reverse(linked_list):
     Returns:
        obj: Reveresed Linked List
     """
-    if linked_list.head is None or linked_list.head.next is None:
-        return linked_list
+    out_list = LinkedList()
+    prev = None
 
-    prev_node = None
-    curr_node = linked_list.head
-    next_node = None
+    for val in linked_list:
+        node = Node(val)
+        node.next = prev
+        prev = node
 
-    while curr_node is not None:
-        next_node = curr_node.next
-        curr_node.next = prev_node
-        prev_node = curr_node
-        curr_node = next_node
-
-    linked_list.head = prev_node
-    return linked_list
+    out_list.head = prev
+    return out_list
 
 llist = LinkedList()
 for value in [4,2,5,1,-3,0]:
     llist.append(value)
 
 flipped = reverse(llist)
-print(llist)
-print(flipped)
 is_correct = list(flipped) == list([0,-3,1,5,2,4]) and list(llist) == list(reverse(flipped))
 print("Pass" if is_correct else "Fail")
